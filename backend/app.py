@@ -24,7 +24,7 @@ app = Flask(__name__)
 app.config["MAX_CONTENT_LENGTH"] = int(os.getenv("MAX_UPLOAD_MB", "1024")) * 1024 * 1024
 
 # Allow the configured FRONTEND_URL plus localhost for local development
-_frontend_url = os.getenv("FRONTEND_URL", "").strip()
+_frontend_url = os.getenv("FRONTEND_URL", "https://churn-prediction-olnz.vercel.app").strip()
 _allowed_origins = [o for o in [_frontend_url] if o] + [
     "http://localhost:5173",
     "http://localhost:3000",

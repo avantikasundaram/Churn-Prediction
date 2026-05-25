@@ -34,7 +34,7 @@ export default function Login({ onSuccess, onBack }) {
       const msg = err.response?.data?.message
       if (!msg && (err.code === 'ERR_NETWORK' || err.message === 'Network Error')) {
         setError(
-          'Cannot reach the backend server. Make sure the Flask backend is running on port 5000 (cd backend && python app.py).'
+          'Cannot connect to the backend API server. Check whether the deployed backend URL is active and CORS is configured correctly.'
         )
       } else {
         setError(msg || 'Login failed. Check that the backend is running and MongoDB is reachable.')
